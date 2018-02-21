@@ -3,6 +3,8 @@ import Router from 'vue-router';
 
 import layout from './../layout/index.vue';
 
+import hello from './../pages/hello.vue';
+
 import contentA from './../content/contentA/contentA.vue';
 import contentB from './../content/contentB/contentB.vue';
 import contentC from './../content/contentC/contentC.vue';
@@ -15,21 +17,21 @@ export default new Router({
   mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'open active',
   // scrollBehavior: () => ({ y: 0 }),
-  // scrollBehavior(to, from, savedPosition) {
-  //   //判断如果滚动条的位置存在直接返回到当前位置，否则返回到起点
-  //   if (savedPosition) {
-  //     return savedPosition
-  //   } else {
-  //     if (to.hash) {
-  //       return { selector: to.hash }
-  //     }
-  //   }
-  // },
+  scrollBehavior(to, from, savedPosition) {
+    //判断如果滚动条的位置存在直接返回到当前位置，否则返回到起点
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      if (to.hash) {
+        return { selector: to.hash }
+      }
+    }
+  },
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'hello',
+      component: hello
     },
     {
       path: '/main',

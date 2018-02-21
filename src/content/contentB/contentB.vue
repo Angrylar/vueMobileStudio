@@ -1,24 +1,14 @@
+<style lang="less">
+@import url(./contentB.less);
+</style>
+
 <template>
     <div id="contentB">
         <h1 @click="showName(title)">{{title}}</h1>
+        <div>
+          <p>slkdfjsldkfj</p>
+        </div>
     </div>
 </template>
-<script>
-export default {
-  name: "contentB",
-  data() {
-    return {
-      title: "contentB"
-    };
-  },
-  mounted: function() {
-    // console.log("contentB");
-  },
-  methods: {
-    showName: arg => {
-      console.log(arg);
-    }
-  }
-};
-</script>
+<script src="./contentB.js"></script>
 

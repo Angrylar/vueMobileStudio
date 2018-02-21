@@ -3,7 +3,7 @@
 </style>
 
 <template>
-  <div id="contentA">
+    <div id="contentA">
 		<h1>{{ title }}</h1>
 		<mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
 			<ul v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="1">
